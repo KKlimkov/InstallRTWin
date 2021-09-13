@@ -116,7 +116,7 @@ public class TestInstallRTWIN {
         driver2.findElementByName("Да").click();
         ;
         try {
-            Thread.sleep(20000);
+            Thread.sleep(30000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -154,7 +154,7 @@ public class TestInstallRTWIN {
         }
         driver2.findElementByName("Вперед").click();
         try {
-            Thread.sleep(20000);
+            Thread.sleep(30000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
