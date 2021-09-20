@@ -25,8 +25,8 @@ class TestInstallRTWIN {
     @Order(1)
     public void Check() throws IOException, InterruptedException {
 
-        InstallSteps.CreateFile("MasterSCADA4DRT_x64_DEMO.exe");
-        InstallSteps.DownloadFile("ftp://ftpGuestDemo:8AA55D8A@support.insat.ru/MasterSCADA4D/1.2/MasterSCADA4DRT_"+System.getProperty("BitMode")+"_DEMO.exe");
+        InstallSteps.CreateFile("MasterSCADA4DRT_"+System.getProperty("BitMode").substring(4)+"_DEMO.exe");
+        InstallSteps.DownloadFile("ftp://ftpGuestDemo:8AA55D8A@support.insat.ru/MasterSCADA4D/1.2/MasterSCADA4DRT_"+System.getProperty("BitMode").substring(4)+"_DEMO.exe");
         InstallSteps.CheckFile();
 
     }
