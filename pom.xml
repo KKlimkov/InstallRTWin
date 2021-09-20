@@ -24,6 +24,15 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
+
+                    <systemProperties>
+                        <property>
+                            <name>BitMode</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${BitMode}</value>
+                        </property>
+                    </systemProperties>
+
                 </configuration>
                 <dependencies>
                     <dependency>
