@@ -31,7 +31,16 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <value>${BitMode}</value>
                         </property>
+
+                        <property>
+                            <name>Brunch</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${Brunch}</value>
+                        </property>
+
                     </systemProperties>
+
+
 
                 </configuration>
                 <dependencies>
