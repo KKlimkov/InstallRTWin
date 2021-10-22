@@ -38,6 +38,12 @@
                             <value>${Brunch}</value>
                         </property>
 
+                        <property>
+                            <name>DownloadFile</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${DownloadFile}</value>
+                        </property>
+
                     </systemProperties>
 
 

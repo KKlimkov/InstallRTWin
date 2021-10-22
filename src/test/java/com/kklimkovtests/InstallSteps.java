@@ -1,7 +1,11 @@
 package com.kklimkovtests;
 import io.appium.java_client.windows.WindowsDriver;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -20,10 +24,13 @@ public class InstallSteps {
     public static WindowsDriver driver1 = null;
     public static WindowsDriver driver2 = null;
 
+    @Step("Формирование пути")
+    public static void PathFile(String FileName) throws InterruptedException {
+        path = "C:\\Users\\Public\\Autotests\\"+FileName;
+    }
 
     @Step("Создание файла")
-    public static void CreateFile(String FileName) throws InterruptedException {
-        path = "C:\\Users\\Public\\Autotests\\"+FileName;
+    public static void CreateFile() throws InterruptedException {
         file = new File(path);
     }
 
@@ -109,33 +116,16 @@ public class InstallSteps {
             e.printStackTrace();
         }
     }
-    @Step("Удаление MS4D RT")
-    public static void DelMs4d(Integer WaitingTime) throws InterruptedException {
-        Boolean Exs = false;
-        if (driver2.findElementByName("Да").isDisplayed()) Exs = true;
-        assertTrue(Exs);
-        driver2.findElementByName("Да").click();
-        ;
-        try {
-            Thread.sleep(WaitingTime);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Boolean Exs2 = false;
-        if ( driver2.findElementByName("Вперед").isDisplayed()) Exs2 = true;
-        assertTrue(Exs2);
+    @Step("Инсталлятор. Поиск элемента")
+    public static void FindElement(String Name, Integer WaitingTime) throws InterruptedException {
+        WebElement dynamicElement = (new WebDriverWait(driver2, WaitingTime))
+                .until(ExpectedConditions.presenceOfElementLocated(By.name(Name)));
     }
 
-
-    @Step("Установка. Нажатие кнопки")
+    @Step("Инсталлятор. Нажатие кнопки")
     public static void InstallClick(String Name, Integer WaitingTime) throws InterruptedException {
-
-        driver2.findElementByName(Name).click();
-        try {
-            Thread.sleep(WaitingTime);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+         WebElement dynamicElement = (new WebDriverWait(driver2, WaitingTime))
+                .until(ExpectedConditions.presenceOfElementLocated(By.name(Name)));
+        dynamicElement.click();
     }
-
 }
