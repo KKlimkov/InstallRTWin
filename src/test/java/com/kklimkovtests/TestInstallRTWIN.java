@@ -36,15 +36,15 @@ class TestInstallRTWIN {
         String FtpUrl = null;
         if (System.getProperty("Brunch").equals("1.2")) {
             FtpUrl =
-                    "ftp://ftpGuestDemo:8AA55D8A@support.insat.ru/MasterSCADA4D/1.2/MasterSCADA4DRT_" +
+                    "ftp://ftpGuestDemo:"+System.getProperty("FtpPassword")+"@support.insat.ru/MasterSCADA4D/1.2/MasterSCADA4DRT_" +
                             System.getProperty("BitMode").substring(4) + "_DEMO.exe";
         } else if (System.getProperty("Brunch").equals("RC")) {
             FtpUrl =
-                    "ftp://ftpGuestSupport:21B74F6E@support.insat.ru/Dev/MasterSCADA4D/1.2.RC/MasterSCADA4DRT_" +
+                    "ftp://ftpGuestSupport:"+System.getProperty("FtpPassword")+"@support.insat.ru/Dev/MasterSCADA4D/1.2.RC/MasterSCADA4DRT_" +
                             System.getProperty("BitMode").substring(4) + "_DEMO.exe";
         } else if (System.getProperty("Brunch").equals("Beta")) {
             FtpUrl =
-                    "ftp://ftpGuestSupport:21B74F6E@support.insat.ru/Dev/MasterSCADA4D/Beta/MasterSCADA4DRT_" +
+                    "ftp://ftpGuestSupport:"+System.getProperty("FtpPassword")+"@support.insat.ru/Dev/MasterSCADA4D/Beta/MasterSCADA4DRT_" +
                             System.getProperty("BitMode").substring(4) + "_DEMO.exe";
         }
 

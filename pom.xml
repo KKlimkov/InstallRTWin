@@ -44,6 +44,12 @@
                             <value>${DownloadFile}</value>
                         </property>
 
+                        <property>
+                            <name>FtpPassword</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${FtpPassword}</value>
+                        </property>
+
                     </systemProperties>
 
 
